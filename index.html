@@ -165,11 +165,38 @@ setInterval(() => {
   testimonialIndex = (testimonialIndex + 1) % testimonials.length;
   document.getElementById("testimonialBox").innerText = testimonials[testimonialIndex];
 }, 4000);
+/* GANADORES */
+
+const nombres = ["Juan","Martín","Lucas","Sofía","Valentina","Tomás","Camila","Franco","Agustín","Julieta","Thiago","Nicolás"];
+const ciudades = ["Buenos Aires","Córdoba","Rosario","Mendoza","La Plata","Salta","Neuquén","Tucumán","Santa Fe"];
+
+function mostrarGanador() {
+
+  const nombre = nombres[numeroAleatorio(0, nombres.length)];
+  const ciudad = ciudades[numeroAleatorio(0, ciudades.length)];
+  const monto = numeroAleatorio(15000, 95000);
+
+  const popup = document.getElementById("winnerPopup");
+
+  popup.innerHTML = `
+  🔔 <strong>${nombre}</strong> de ${ciudad}<br>
+  ganó <strong>$${monto.toLocaleString('es-AR')}</strong>
+  hace ${numeroAleatorio(1,4)} minutos
+  `;
+
+  popup.classList.add("show");
+
+  setTimeout(() => popup.classList.remove("show"), 2500);
+  setTimeout(mostrarGanador, numeroAleatorio(2500, 5000));
+}
+
+setTimeout(mostrarGanador, 2500);
 
 </script>
 
 </body>
 </html>
+
 
 
 
