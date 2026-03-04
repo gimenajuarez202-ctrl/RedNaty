@@ -89,6 +89,29 @@ h1{
   font-size:12px;
   opacity:.6;
 }
+
+/* POPUP GANADOR */
+.popup{
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: linear-gradient(145deg,#1a0033,#2a0055);
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 14px;
+  font-size: 13px;
+  box-shadow: 0 10px 30px rgba(122,0,255,.5);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+  max-width: 280px;
+  z-index: 9999;
+}
+
+.popup.show{
+  opacity:1;
+  transform:translateY(0);
+}
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -112,8 +135,6 @@ src="https://www.facebook.com/tr?id=913297737973113&ev=PageView&noscript=1"
 <body>
 
 <div class="container">
-
-<div class="badge-live">🔴 EN VIVO AHORA</div>
 
 <h1>🎰 CASINO VIP ONLINE</h1>
 
@@ -145,26 +166,15 @@ Retiros rápidos • Atención 24/7 • Mesas en vivo
 
 </div>
 
+<div class="popup" id="winnerPopup"></div>
+
 <script>
 
-/* LINK WHATSAPP */
-var link = "https://wa.link/redestrella";
-document.getElementById("ctaTop").href = link;
+/* FUNCION NUMERO ALEATORIO (incluye el maximo) */
+function numeroAleatorio(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
-/* TESTIMONIOS */
-const testimonials = [
-"⭐ Excelente atención y retiros rápidos.",
-"⭐ Muy buena experiencia jugando en vivo.",
-"⭐ El soporte responde al instante.",
-"⭐ Plataforma rápida y estable."
-];
-
-let testimonialIndex = 0;
-
-setInterval(() => {
-  testimonialIndex = (testimonialIndex + 1) % testimonials.length;
-  document.getElementById("testimonialBox").innerText = testimonials[testimonialIndex];
-}, 4000);
 /* GANADORES */
 
 const nombres = ["Juan","Martín","Lucas","Sofía","Valentina","Tomás","Camila","Franco","Agustín","Julieta","Thiago","Nicolás"];
@@ -172,8 +182,8 @@ const ciudades = ["Buenos Aires","Córdoba","Rosario","Mendoza","La Plata","Salt
 
 function mostrarGanador() {
 
-  const nombre = nombres[numeroAleatorio(0, nombres.length)];
-  const ciudad = ciudades[numeroAleatorio(0, ciudades.length)];
+  const nombre = nombres[numeroAleatorio(0, nombres.length - 1)];
+  const ciudad = ciudades[numeroAleatorio(0, ciudades.length - 1)];
   const monto = numeroAleatorio(15000, 95000);
 
   const popup = document.getElementById("winnerPopup");
@@ -191,6 +201,22 @@ function mostrarGanador() {
 }
 
 setTimeout(mostrarGanador, 2500);
+
+/* TESTIMONIOS */
+
+const testimonials = [
+"⭐ Excelente atención y retiros rápidos.",
+"⭐ Muy buena experiencia jugando en vivo.",
+"⭐ El soporte responde al instante.",
+"⭐ Plataforma rápida y estable."
+];
+
+let testimonialIndex = 0;
+
+setInterval(() => {
+  testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+  document.getElementById("testimonialBox").innerText = testimonials[testimonialIndex];
+}, 4000);
 
 </script>
 
