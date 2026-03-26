@@ -1,281 +1,224 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Casino VIP Online | Jugá Ahora</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casino VIP Online | Jugá Ahora</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
 
-<style>
-body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background: radial-gradient(circle at top,#1a0033,#0d001a 60%,#000);
-  color:#fff;
-  text-align:center;
-  overflow-x:hidden;
-}
+  <style>
+    body{
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      background: radial-gradient(circle at top,#1a0033,#0d001a 60%,#000);
+      color:#fff;
+      text-align:center;
+      overflow-x:hidden;
+    }
 
-.container{
-  max-width:520px;
-  margin:auto;
-  padding:30px 20px;
-}
+    .container{
+      max-width:520px;
+      margin:auto;
+      padding:30px 20px;
+    }
 
-h1{
-  font-size:32px;
-  margin-bottom:10px;
-  background: linear-gradient(45deg,#ff00cc,#00e0ff,#ffcc00);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  font-weight:900;
-  animation: glowTitle 2s infinite alternate;
-}
+    h1{
+      font-size:32px;
+      margin-bottom:10px;
+      background: linear-gradient(45deg,#ff00cc,#00e0ff,#ffcc00);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      font-weight:900;
+      animation: glowTitle 2s infinite alternate;
+    }
 
-@keyframes glowTitle{
-  from{ text-shadow:0 0 10px rgba(255,0,200,.5);}
-  to{ text-shadow:0 0 25px rgba(0,224,255,.8);}
-}
+    @keyframes glowTitle{
+      from{ text-shadow:0 0 10px rgba(255,0,200,.5);}
+      to{ text-shadow:0 0 25px rgba(0,224,255,.8);}
+    }
 
-.subtitle{
-  opacity:.9;
-  margin-bottom:25px;
-  font-size:15px;
-}
+    .subtitle{
+      opacity:.9;
+      margin-bottom:25px;
+      font-size:15px;
+    }
 
-.cta{
-  display:block;
-  background: linear-gradient(45deg,#ff00cc,#7a00ff);
-  color:#fff;
-  padding:18px;
-  border-radius:50px;
-  font-weight:bold;
-  text-decoration:none;
-  margin:20px 0;
-  transition:.3s;
-  box-shadow:0 0 25px rgba(255,0,200,.6);
-  font-size:17px;
-  letter-spacing:.5px;
-}
+    .cta{
+      display:block;
+      background: linear-gradient(45deg,#ff00cc,#7a00ff);
+      color:#fff;
+      padding:18px;
+      border-radius:50px;
+      font-weight:bold;
+      text-decoration:none;
+      margin:20px 0;
+      transition:.3s;
+      box-shadow:0 0 25px rgba(255,0,200,.6);
+      font-size:17px;
+      letter-spacing:.5px;
+    }
 
-.cta:hover{
-  transform:scale(1.07);
-  box-shadow:0 0 35px rgba(122,0,255,.9);
-}
+    .cta:hover{
+      transform:scale(1.07);
+      box-shadow:0 0 35px rgba(122,0,255,.9);
+    }
 
-.benefits{
-  text-align:left;
-  margin:25px 0;
-  font-size:14px;
-}
+    .benefits{
+      text-align:left;
+      margin:25px 0;
+      font-size:14px;
+    }
 
-.benefits li{
-  margin-bottom:12px;
-}
+    .benefits li{
+      margin-bottom:12px;
+    }
 
-.section{
-  background: linear-gradient(145deg,#140022,#1f0033);
-  padding:20px;
-  border-radius:16px;
-  margin-top:20px;
-  font-size:14px;
-  border:1px solid rgba(255,0,200,0.3);
-  box-shadow:0 0 20px rgba(122,0,255,.2);
-}
+    .section{
+      background: linear-gradient(145deg,#140022,#1f0033);
+      padding:20px;
+      border-radius:16px;
+      margin-top:20px;
+      font-size:14px;
+      border:1px solid rgba(255,0,200,0.3);
+      box-shadow:0 0 20px rgba(122,0,255,.2);
+    }
 
-.footer{
-  margin-top:40px;
-  font-size:12px;
-  opacity:.6;
-}
+    .footer{
+      margin-top:40px;
+      font-size:12px;
+      opacity:.6;
+    }
 
-/* POPUP GANADOR */
-.popup{
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: linear-gradient(145deg,#1a0033,#2a0055);
-  color: #fff;
-  padding: 14px 18px;
-  border-radius: 14px;
-  font-size: 13px;
-  box-shadow: 0 10px 30px rgba(122,0,255,.5);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.5s ease;
-  max-width: 280px;
-  z-index: 9999;
-}
+    /* POPUP */
+    .popup{
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: linear-gradient(145deg,#1a0033,#2a0055);
+      color: #fff;
+      padding: 14px 18px;
+      border-radius: 14px;
+      font-size: 13px;
+      box-shadow: 0 10px 30px rgba(122,0,255,.5);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+      max-width: 280px;
+      z-index: 9999;
+    }
 
-.popup.show{
-  opacity:1;
-  transform:translateY(0);
-}
-</style>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '913297737973113');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=913297737973113&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-<script>
-function getCookie(name) {
-  let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-  if (match) return match[2];
-}
+    .popup.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+  </style>
 
-function getParam(name) {
-  let url = new URL(window.location.href);
-  return url.searchParams.get(name);
-}
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;
+      n=f.fbq=function(){
+        n.callMethod ?
+        n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+      };
+      if(!f._fbq)f._fbq=n;
+      n.push=n;
+      n.loaded=!0;
+      n.version='2.0';
+      n.queue=[];
+      t=b.createElement(e);
+      t.async=!0;
+      t.src=v;
+      s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
+    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
-function setCookie(name, value, days) {
-  let d = new Date();
-  d.setTime(d.getTime() + (days*24*60*60*1000));
-  document.cookie = name + "=" + value + ";path=/;expires=" + d.toUTCString();
-}
+    fbq('init', '913297737973113');
 
-let fbc = getCookie('_fbc');
+    fbq('track', 'PageView');
+  </script>
 
-if (!fbc) {
-  const fbclid = getParam('fbclid');
-  if (fbclid) {
-    fbc = `fb.1.${Date.now()}.${fbclid}`;
-    setCookie('_fbc', fbc, 90);
-  }
-}
-
-console.log('FBC final:', fbc);
-</script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=913297737973113&ev=PageView&noscript=1"/>
+  </noscript>
 </head>
 
 <body>
 
-<div class="container">
+  <div class="container">
+    <h1>🎰 CASINO VIP ONLINE</h1>
 
-<h1>🎰 CASINO VIP ONLINE</h1>
+    <p class="subtitle">
+      Retiros rápidos • Atención 24/7 • Mesas en vivo
+    </p>
 
-<p class="subtitle">
-Retiros rápidos • Atención 24/7 • Mesas en vivo
-</p>
+    <a id="ctaTop" class="cta" href="https://wa.link/redestrella" target="_blank">
+      🔥 QUIERO JUGAR AHORA
+    </a>
 
-<a id="ctaTop" class="cta" href="#">
-🔥 QUIERO JUGAR AHORA
-</a>
+    <ul class="benefits">
+      <li>⚡ Cargas y retiros inmediatos</li>
+      <li>🎰 Slots y ruleta en vivo</li>
+      <li>💰 Pagos garantizados</li>
+      <li>📲 Atención personalizada por WhatsApp</li>
+    </ul>
 
-<ul class="benefits">
-<li>⚡ Cargas y retiros inmediatos</li>
-<li>🎰 Slots y ruleta en vivo</li>
-<li>💰 Pagos garantizados</li>
-<li>📲 Atención personalizada por WhatsApp</li>
-</ul>
+    <div class="section">
+      <strong>Opiniones reales</strong>
+      <div id="testimonialBox">
+        ⭐ Excelente atención y retiros rápidos.
+      </div>
+    </div>
 
-<div class="section">
-<strong>Opiniones reales</strong>
-<div id="testimonialBox">
-⭐ Excelente atención y retiros rápidos.
-</div>
-</div>
+    <div class="footer">
+      +18 | Juego responsable
+    </div>
+  </div>
 
-<div class="footer">
-+18 | Juego responsable
-</div>
+  <div class="popup" id="winnerPopup"></div>
 
-</div>
+  <script>
+    function numeroAleatorio(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 
-<div class="popup" id="winnerPopup"></div>
+    const nombres = ["Juan","Martín","Lucas","Sofía","Valentina","Tomás","Camila","Franco","Agustín","Julieta","Thiago","Nicolás"];
+    const ciudades = ["Buenos Aires","Córdoba","Rosario","Mendoza","La Plata","Salta","Neuquén","Tucumán","Santa Fe"];
 
-<script>
+    function mostrarGanador() {
+      const nombre = nombres[numeroAleatorio(0, nombres.length - 1)];
+      const ciudad = ciudades[numeroAleatorio(0, ciudades.length - 1)];
+      const monto = numeroAleatorio(15000, 95000);
 
-/* FUNCION NUMERO ALEATORIO (incluye el maximo) */
-function numeroAleatorio(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+      const popup = document.getElementById("winnerPopup");
 
-/* GANADORES */
+      popup.innerHTML = `🔔 <strong>${nombre}</strong> de ${ciudad}<br>
+      ganó <strong>$${monto.toLocaleString('es-AR')}</strong> hace ${numeroAleatorio(1,4)} minutos`;
 
-const nombres = ["Juan","Martín","Lucas","Sofía","Valentina","Tomás","Camila","Franco","Agustín","Julieta","Thiago","Nicolás"];
-const ciudades = ["Buenos Aires","Córdoba","Rosario","Mendoza","La Plata","Salta","Neuquén","Tucumán","Santa Fe"];
+      popup.classList.add("show");
 
-function mostrarGanador() {
+      setTimeout(() => popup.classList.remove("show"), 2500);
+      setTimeout(mostrarGanador, numeroAleatorio(2500, 5000));
+    }
 
-  const nombre = nombres[numeroAleatorio(0, nombres.length - 1)];
-  const ciudad = ciudades[numeroAleatorio(0, ciudades.length - 1)];
-  const monto = numeroAleatorio(15000, 95000);
+    setTimeout(mostrarGanador, 2500);
 
-  const popup = document.getElementById("winnerPopup");
+    const testimonials = [
+      "⭐ Excelente atención y retiros rápidos.",
+      "⭐ Muy buena experiencia jugando en vivo.",
+      "⭐ El soporte responde al instante.",
+      "⭐ Plataforma rápida y estable."
+    ];
 
-  popup.innerHTML = `
-  🔔 <strong>${nombre}</strong> de ${ciudad}<br>
-  ganó <strong>$${monto.toLocaleString('es-AR')}</strong>
-  hace ${numeroAleatorio(1,4)} minutos
-  `;
+    let testimonialIndex = 0;
 
-  popup.classList.add("show");
+    setInterval(() => {
+      testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+      document.getElementById("testimonialBox").innerText = testimonials[testimonialIndex];
+    }, 4000);
+  </script>
 
-  setTimeout(() => popup.classList.remove("show"), 2500);
-  setTimeout(mostrarGanador, numeroAleatorio(2500, 5000));
-}
-
-setTimeout(mostrarGanador, 2500);
-
-/* TESTIMONIOS */
-
-const testimonials = [
-"⭐ Excelente atención y retiros rápidos.",
-"⭐ Muy buena experiencia jugando en vivo.",
-"⭐ El soporte responde al instante.",
-"⭐ Plataforma rápida y estable."
-];
-
-let testimonialIndex = 0;
-
-setInterval(() => {
-  testimonialIndex = (testimonialIndex + 1) % testimonials.length;
-  document.getElementById("testimonialBox").innerText = testimonials[testimonialIndex];
-}, 4000);
-
-</script>
-<script>
-document.getElementById('ctaTop').addEventListener('click', function(e) {
-  e.preventDefault();
-
-  function getCookie(name) {
-    let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-    if (match) return match[2];
-  }
-
-  const fbc = getCookie('_fbc');
-
-  const mensaje = `Hola quiero jugar y reclamar mi bono del 20% (${fbc})`;
-  const telefono = "541124638273"; // tu número real
-const url = `https://api.whatsapp.com/send?phone=${telefono}&text=${encodeURIComponent(mensaje)}`;
-
-  // evento para Meta
-  fbq('track', 'Lead');
-
-  // redirección
-    setTimeout(() => {
-    window.location.href = url;
-  }, 100);
-});
-</script>
 </body>
 </html>
-
-
-
-
-
