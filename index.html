@@ -171,7 +171,7 @@ console.log('FBC final:', fbc);
 Retiros rápidos • Atención 24/7 • Mesas en vivo
 </p>
 
-<a id="ctaTop" class="cta" href="https://wa.link/redestrella" target="_blank">
+<a id="ctaTop" class="cta" href="#">
 🔥 QUIERO JUGAR AHORA
 </a>
 
@@ -248,7 +248,29 @@ setInterval(() => {
 }, 4000);
 
 </script>
+<script>
+document.getElementById('ctaTop').addEventListener('click', function(e) {
+  e.preventDefault();
 
+  function getCookie(name) {
+    let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    if (match) return match[2];
+  }
+
+  const fbc = getCookie('_fbc');
+
+  const mensaje = `Hola quiero jugar (${fbc})`;
+  const url = `https://wa.link/redestrella?text=${encodeURIComponent(mensaje)}`;
+
+  // evento para Meta
+  fbq('track', 'Lead');
+
+  // redirección
+    setTimeout(() => {
+    window.location.href = url;
+  }, 100);
+});
+</script>
 </body>
 </html>
 
