@@ -124,10 +124,6 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '913297737973113');
-{
-  em: 'email@email.com',   // Values will be hashed automatically by the pixel using SHA-256
-  ph: '1234567890',
-  ...
 });
 fbq('track', 'PageView');
 </script>
@@ -135,6 +131,35 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=913297737973113&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<script>
+function getCookie(name) {
+  let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+  if (match) return match[2];
+}
+
+function getParam(name) {
+  let url = new URL(window.location.href);
+  return url.searchParams.get(name);
+}
+
+function setCookie(name, value, days) {
+  let d = new Date();
+  d.setTime(d.getTime() + (days*24*60*60*1000));
+  document.cookie = name + "=" + value + ";path=/;expires=" + d.toUTCString();
+}
+
+let fbc = getCookie('_fbc');
+
+if (!fbc) {
+  const fbclid = getParam('fbclid');
+  if (fbclid) {
+    fbc = `fb.1.${Date.now()}.${fbclid}`;
+    setCookie('_fbc', fbc, 90);
+  }
+}
+
+console.log('FBC final:', fbc);
+</script>
 </head>
 
 <body>
