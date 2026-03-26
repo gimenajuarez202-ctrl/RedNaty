@@ -260,7 +260,8 @@ document.getElementById('ctaTop').addEventListener('click', function(e) {
   const fbc = getCookie('_fbc');
 
   const mensaje = `Hola quiero jugar (${fbc})`;
-  const url = `https://wa.link/redestrella?text=${encodeURIComponent(mensaje)}`;
+  const telefono = "541124638273"; // tu número real
+const url = `https://api.whatsapp.com/send?phone=${telefono}&text=${encodeURIComponent(mensaje)}`;
 
   // evento para Meta
   fbq('track', 'Lead');
